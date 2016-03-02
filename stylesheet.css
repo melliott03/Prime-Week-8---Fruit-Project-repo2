@@ -55,3 +55,9 @@ img {
   background-position: center;
   background-size: contain;
 }
+
+small{
+
+  display: none;
+  
+}

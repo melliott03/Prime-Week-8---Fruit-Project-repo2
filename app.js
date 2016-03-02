@@ -90,7 +90,7 @@ function runMarket(fruitName, fruitArray, fruitPrice){
   } else {
 
     $( ".curtain" ).slideDown(5000);
-    alert("GTFO YOU'RE OUTTA MONEY").delay(10000);
+    $( "small" ).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
   }
 
 }
