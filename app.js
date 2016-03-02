@@ -88,7 +88,9 @@ function runMarket(fruitName, fruitArray, fruitPrice){
     moneyCalc(fruitArray);
     // Adds fruit to the inventory
   } else {
-    alert("GTFO YOU'RE OUTTA MONEY");
+
+    $( ".curtain" ).slideDown(5000);
+    alert("GTFO YOU'RE OUTTA MONEY").delay(10000);
   }
 
 }
