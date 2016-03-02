@@ -1,0 +1,42 @@
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;
+    height: 250px;
+    align-content: stretch;
+}
+.apple-avg-price{
+  font-size: 12px;
+}
+
+p  {
+  font-size: 12px;
+}
+p:nth-child(2) {
+    background: #ff0000;
+    font-size: 12px;
+}
+.slogan{
+    background-color: orange;
+    font-size: 12px;
+}
+.container{
+  padding-bottom: 30px;
+  text-align: center;
+}
+.jumbotron{
+  text-align: center;
+}
+.btnInfo{
+    padding-top:  10px;
+    display: inline-block;
+}
+img {
+  width: auto;
+  height: 70px;
+  display: block;
+  text-align: center;
+  margin: 0;
+  float: inherit;
+
+}
