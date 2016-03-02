@@ -24,7 +24,7 @@ $(document).ready(function(){
   $(".orange-button").on("click", orange);
   $(".pear-button").on("click", pear);
   priceToDom();
-  setInterval(fruitPriceChange, 1500);
+  setInterval(fruitPriceChange, 15000);
 
 
   $(".apple-button-sell").on("click", appleSell);
@@ -79,7 +79,7 @@ function fruitPriceChange(){
 //
 // // Runs our entire fruit market
 function runMarket(fruitName, fruitArray, fruitPrice){
-  if(bankMoney >= fruitPrice){
+  if(bankMoney >= fruitPrice ){
     // Values dumped into array
     pushMoney(fruitArray, fruitPrice);
     // changes the average price
@@ -87,8 +87,10 @@ function runMarket(fruitName, fruitArray, fruitPrice){
     // Calculates the money the user has left
     moneyCalc(fruitArray);
     // Adds fruit to the inventory
-  } else {
-
+    priceToDom();
+  } else if(fruitArray.length > 0){
+    $( "small" ).text('SELL SOME OF YOUR FRUIT Or BUY SOMETHING ELSE').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
+  }else{
     $( ".curtain" ).slideDown(5000);
     $( "small" ).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
   }
@@ -132,10 +134,10 @@ function countFruit(fruitArray, fruitName){
 
 // Adds the updated prices to the DOM
 function priceToDom(){
-  $('.apple-price').text('$' + applePrice/100);
-  $('.orange-price').text('$' + ojPrice/100);
-  $('.banana-price').text('$' + banPrice/100);
-  $('.pear-price').text('$' + pearPrice/100);
+  $('.apple-price').text('$' + (applePrice/100).toFixed(2));
+  $('.orange-price').text('$' + (ojPrice/100).toFixed(2));
+  $('.banana-price').text('$' + (banPrice/100).toFixed(2));
+  $('.pear-price').text('$' + (pearPrice/100).toFixed(2));
 
   $('.apple-number').text(appleArray.length + ' Apples');
   $('.orange-number').text(ojArray.length + ' Oranges');
@@ -155,6 +157,7 @@ function appleSell(){
     bankMoney += applePrice / 100;
   // console.log(bankMoney);
     $(".total-money").text("Total Money: $" + bankMoney.toFixed(2));
+    priceToDom();
     return bankMoney;
   }
 }
@@ -170,6 +173,7 @@ function bananaSell(){
     bankMoney += applePrice / 100;
   // console.log(bankMoney);
     $(".total-money").text("Total Money: $" + bankMoney.toFixed(2));
+    priceToDom();
     return bankMoney;
   }
 }
@@ -185,6 +189,7 @@ function orangeSell(){
     bankMoney += applePrice / 100;
   // console.log(bankMoney);
     $(".total-money").text("Total Money: $" + bankMoney.toFixed(2));
+    priceToDom();
     return bankMoney;
   }
 }
@@ -200,6 +205,7 @@ function pearSell(){
     bankMoney += applePrice / 100;
   // console.log(bankMoney);
     $(".total-money").text("Total Money: $" + bankMoney.toFixed(2));
+    priceToDom();
     return bankMoney;
   }
 }
