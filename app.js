@@ -24,7 +24,7 @@ $(document).ready(function(){
   $(".orange-button").on("click", orange);
   $(".pear-button").on("click", pear);
   priceToDom();
-  setInterval(fruitPriceChange, 15000);
+  setInterval(fruitPriceChange, 500);
 
 
   $(".apple-button-sell").on("click", appleSell);
@@ -88,9 +88,10 @@ function runMarket(fruitName, fruitArray, fruitPrice){
     moneyCalc(fruitArray);
     // Adds fruit to the inventory
     priceToDom();
-  } else if(fruitArray.length > 0){
-    $( "small" ).text('SELL SOME OF YOUR FRUIT Or BUY SOMETHING ELSE').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
-  }else{
+  // } else if(fruitArray.length > 0){
+  //   $( "small" ).text('SELL SOME OF YOUR FRUIT Or BUY SOMETHING ELSE').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
+  //
+    }else{
     $( ".curtain" ).slideDown(5000);
     $( "small" ).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
   }
